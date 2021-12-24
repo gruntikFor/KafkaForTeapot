@@ -2,6 +2,7 @@
 It's test project for learn Kafka 2.8.1
 
 Download Zookeeper https://zookeeper.apache.org/releases.html#download
+
 Download Kafka 2.8.1 https://kafka.apache.org/downloads
 
 How to start?
@@ -12,5 +13,7 @@ How to start?
 5. Change line in server.properties to log.dirs=C:/kafka/kafka-logs
 
 Commands for start
+
 start C:\kafka\bin\windows\zookeeper-server-start.bat C:\kafka\config\zookeeper.properties
+
 start C:\kafka\bin\windows\kafka-server-start.bat C:\kafka\config\server.properties
