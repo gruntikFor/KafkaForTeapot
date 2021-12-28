@@ -19,3 +19,5 @@ start C:\kafka\bin\windows\zookeeper-server-start.bat C:\kafka\config\zookeeper.
 timeout /t 10
 
 start C:\kafka\bin\windows\kafka-server-start.bat C:\kafka\config\server.properties
+
+Note: for SimpleProducer and SimpleProducer you should put .class files into target\classes dir 
