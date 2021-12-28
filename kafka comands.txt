@@ -1,0 +1,50 @@
+docker network create kafkanet
+
+/bin/kafka-topics --list --zookeeper zookeeper:2181
+
+
+\\list 
+
+/bin/kafka-topics --list --bootstrap-server localhost:9092
+
+
+\\set partitions
+
+/bin/kafka-topics --bootstrap-server localhost:9092 --alter --topic demo-topic --partitions 3
+
+
+\\run container
+
+docker exec -it kafka bash
+
+
+\\start consumer
+
+/bin/kafka-console-consumer --topic demo-topic --group demo-group --bootstrap-server kafka:9092
+
+\\start producer
+
+/bin/kafka-console-producer --topic demo-topic --bootstrap-server kafka:9092
+
+
+bin/kafka-consumer-groups --describe --group demo-group --bootstrap-server localhost:9092
+
+kafka-topics --list --bootstrap-server localhost:9092
+
+kafka-topics --bootstrap-server localhost:9092 --describe --topic demo-topic
+
+
+kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic out-topic
+kafka-topics --bootstrap-server localhost:9092 --alter --topic out-topic --partitions 2
+
+
+my_kafka_run com.example.kafkakonspect.SimpleProducer out-topic
+
+com\example\kafkakonspect
+
+my_kafka_run com.example.kafkakonspect.SimpleConsumer out-topic testGroup02 client01
+my_kafka_run com.example.kafkakonspect.SimpleConsumer out-topic testGroup02 client02
+
+
+
+

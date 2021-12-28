@@ -19,6 +19,7 @@ public class KafkaForTeapotApplication {
         System.out.println(record.partition());
         System.out.println(record.key());
         System.out.println(record.value());
+        System.out.println(record.timestamp());
     }
 
     public static void main(String[] args) {
